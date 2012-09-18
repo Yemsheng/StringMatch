@@ -95,7 +95,8 @@ bool StringMatch::StringMatch2(const char *firstStr, const char *secondStr)
 	bool cmpFlag = true;
 	for(i=0;i<g_ArraySize;i++)
 	{
-		if(MarkArray[i]!=0){
+		if(MarkArray[i]!=0)
+		{
 			cmpFlag = false;
 			break;
 		}
