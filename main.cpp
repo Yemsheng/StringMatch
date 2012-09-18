@@ -14,6 +14,7 @@ int main()
 	char *d = "qwe";
 	StringMatch sMatch;
 	bool matchFlag = false;
+
 	matchFlag = sMatch.StringMatch1(a,b);
 	cout<<a<<" "<<b<<" "<<matchFlag<<endl;
 	matchFlag = sMatch.StringMatch1(a,c);
