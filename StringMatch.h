@@ -10,7 +10,7 @@ public:
 	//先排序 再去匹配，O(nlogn)
 	bool StringMatch1(const char*, const char*);
 
-	//引用一个128大小的数组，计数，判断数组的值，O(n)
+	//引用一个m=128大小的数组，计数，判断数组的值，O(n+m)
 	bool StringMatch2(const char*, const char*);
 
 private:

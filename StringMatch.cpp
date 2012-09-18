@@ -60,6 +60,7 @@ bool StringMatch::StringMatch1(const char *firstStr, const char *secondStr)
 	return cmpFlag;
 }
 
+
 bool StringMatch::StringMatch2(const char *firstStr, const char *secondStr)
 {
 	assert((firstStr!=NULL)&&(secondStr!=NULL));
