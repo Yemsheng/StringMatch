@@ -26,6 +26,8 @@ bool StringMatch::StringMatch1(const char *firstStr, const char *secondStr)
 		return false;
 	}
 
+
+	//拷贝到数组
 	int lenAll = (firstStrLen+1)*2;
 	int lenHalf = firstStrLen+1;
 	char *arrayToStoreChar = new char[lenAll];
@@ -35,19 +37,22 @@ bool StringMatch::StringMatch1(const char *firstStr, const char *secondStr)
 	m_firstStr = arrayToStoreChar;
 	strncpy(m_firstStr,firstStr,firstStrLen);
 	m_firstStr[firstStrLen] = '\0';
-
 	m_secondStr = arrayToStoreChar+lenHalf;
 	strncpy(m_secondStr,secondStr,secondStrLen);
 	m_secondStr[secondStrLen] = '\0';
 
+
+	//排序
 	sort(m_firstStr,m_firstStr+firstStrLen);
 	sort(m_secondStr, m_secondStr+secondStrLen);
 
+	//比较
 	int i = 0;
 	bool cmpFlag = true;
 	for(i=0;i<firstStrLen;i++)
 	{
-		if(m_firstStr[i]!=m_secondStr[i]){
+		if(m_firstStr[i]!=m_secondStr[i])
+		{
 			cmpFlag = false;
 			break;
 		}
@@ -80,6 +85,7 @@ bool StringMatch::StringMatch2(const char *firstStr, const char *secondStr)
 	int MarkArray[g_ArraySize];
 	memset(MarkArray,0,sizeof(MarkArray));
 
+	//计数，加加，减减
 	const char *p = firstStr;
 	int i = 0;
 	for(i=0;i<firstStrLen;i++)
@@ -92,6 +98,7 @@ bool StringMatch::StringMatch2(const char *firstStr, const char *secondStr)
 		MarkArray[p[i]]--;
 	}
 
+	//判断是否存在非0
 	bool cmpFlag = true;
 	for(i=0;i<g_ArraySize;i++)
 	{
