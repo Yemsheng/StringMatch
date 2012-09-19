@@ -55,7 +55,7 @@ bool StringMatch::StringMatch1(const char *firstStr, const char *secondStr)
 	}
 
 
-	delete arrayToStoreChar;
+	delete [] arrayToStoreChar;
 
 	return cmpFlag;
 }
